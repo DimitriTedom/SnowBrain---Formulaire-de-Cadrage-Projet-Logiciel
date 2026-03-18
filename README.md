@@ -65,7 +65,7 @@ Vous pouvez servir le formulaire via:
 https://votre-domaine/formulaire-snowbrain.html
 ```
 
-Si vous voulez servir la page sur `/`, ajoutez un `vercel.json` avec une rewrite vers `formulaire-snowbrain.html`.
+Le fichier `vercel.json` est deja inclus pour servir la page correctement sur `/` et eviter les 404 de redirection.
 
 ## Export Excel
 

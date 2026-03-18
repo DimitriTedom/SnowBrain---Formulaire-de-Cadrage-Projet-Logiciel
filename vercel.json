@@ -1,0 +1,23 @@
+{
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/formulaire-snowbrain.html"
+    },
+    {
+      "source": "/formulaire-snowbrain",
+      "destination": "/formulaire-snowbrain.html"
+    },
+    {
+      "source": "/formulaire-snowbrain/",
+      "destination": "/formulaire-snowbrain.html"
+    }
+  ]
+}
