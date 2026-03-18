@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnowBrain - Formulaire de Cadrage Projet</title>
+  <meta name="description" content="Formulaire de cadrage SnowBrain pour collecter les besoins business, fonctionnels, techniques et financiers d'un projet logiciel avant lancement.">
+  <meta name="keywords" content="SnowBrain, formulaire client, cadrage projet logiciel, cahier des charges, exigences, budget, architecture">
+  <meta name="author" content="SnowBrain">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#0a1735">
+  <link rel="canonical" href="./formulaire-snowbrain.html">
+
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SnowBrain">
+  <meta property="og:title" content="SnowBrain - Formulaire de Cadrage Projet Logiciel">
+  <meta property="og:description" content="Collecte complete des informations necessaires au cadrage, a l'architecture, au planning et au budget d'un projet logiciel.">
+  <meta property="og:url" content="./formulaire-snowbrain.html">
+  <meta property="og:image" content="assets/seo/og-image-1200x630.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Visuel SnowBrain du formulaire de cadrage projet logiciel">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SnowBrain - Formulaire de Cadrage Projet Logiciel">
+  <meta name="twitter:description" content="Un formulaire complet pour cadrer les projets logiciels: besoins, architecture, risques, planning et budget.">
+  <meta name="twitter:image" content="assets/seo/twitter-image-1200x600.png">
+  <meta name="twitter:image:alt" content="Apercu SnowBrain du formulaire de cadrage projet logiciel">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/seo/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/seo/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/seo/apple-touch-icon-180x180.png">
+  <link rel="manifest" href="assets/seo/site.webmanifest">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "SnowBrain - Formulaire de Cadrage Projet Logiciel",
+      "description": "Formulaire de collecte des besoins client pour cadrer un projet logiciel de bout en bout.",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SnowBrain"
+      },
+      "image": "assets/seo/og-image-1200x630.png"
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080913;
+      --bg-soft: #111527;
+      --panel: rgba(18, 24, 44, 0.84);
+      --panel-strong: rgba(28, 35, 60, 0.92);
+      --line: rgba(173, 207, 255, 0.2);
+      --text: #edf2ff;
+      --muted: #b6c2e2;
+      --accent: #7ce8f8;
+      --accent-2: #94b7ff;
+      --ok: #8cf6c5;
+      --warn: #ffd18b;
+      --danger: #ff9fb3;
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(1000px 550px at 8% -10%, rgba(124, 232, 248, 0.23), transparent 62%),
+        radial-gradient(1000px 550px at 92% -30%, rgba(148, 183, 255, 0.28), transparent 58%),
+        linear-gradient(145deg, #070911 0%, #0a1020 55%, #05070f 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(circle at 50% 15%, black 35%, transparent 80%);
+    }
+
+    .shell {
+      width: min(1300px, 92vw);
+      margin: 34px auto 64px;
+      position: relative;
+      z-index: 1;
+      animation: appear 800ms ease-out both;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      background: linear-gradient(130deg, rgba(30, 45, 78, 0.85), rgba(12, 17, 33, 0.92));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      padding: 28px clamp(18px, 3vw, 34px);
+      position: sticky;
+      top: 16px;
+      z-index: 5;
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-family: "Fraunces", serif;
+      margin: 0;
+      line-height: 1.1;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 85ch;
+      font-size: 0.98rem;
+    }
+
+    .tagline {
+      border: 1px solid rgba(124, 232, 248, 0.5);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: #d4fbff;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      white-space: nowrap;
+      background: rgba(124, 232, 248, 0.14);
+    }
+
+    .progress-wrap {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px 14px;
+      align-items: center;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #7ce8f8, #94b7ff);
+      transition: width 300ms ease;
+    }
+
+    .progress-text {
+      font-weight: 700;
+      color: #def4ff;
+      font-size: 0.9rem;
+    }
+
+    form {
+      margin-top: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    section.panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 2.3vw, 28px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section.panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -74% auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 232, 248, 0.2), transparent 70%);
+      pointer-events: none;
+    }
+
+    .panel h2 {
+      margin: 0 0 6px;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.15rem, 2vw, 1.65rem);
+      line-height: 1.2;
+    }
+
+    .panel .lead {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      max-width: 95ch;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    label.field {
+      display: grid;
+      gap: 7px;
+      align-content: start;
+    }
+
+    .field > span {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #d8e7ff;
+      letter-spacing: 0.02em;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      background: var(--panel-strong);
+      border: 1px solid rgba(195, 217, 255, 0.2);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      padding: 11px 12px;
+      font: inherit;
+      transition: border-color 200ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8fa2ca;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: rgba(124, 232, 248, 0.8);
+      box-shadow: 0 0 0 3px rgba(124, 232, 248, 0.16);
+      transform: translateY(-1px);
+    }
+
+    .checkbox-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(185, 209, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      color: #e4eeff;
+    }
+
+    .chip input {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      accent-color: #7ce8f8;
+    }
+
+    .repeater {
+      border: 1px solid rgba(173, 207, 255, 0.24);
+      border-radius: var(--radius-sm);
+      background: rgba(9, 13, 26, 0.6);
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    .repeater-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .repeater-head strong {
+      font-size: 0.92rem;
+      color: #d6ecff;
+      letter-spacing: 0.02em;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(174, 208, 255, 0.14);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 840px;
+      background: rgba(17, 21, 38, 0.86);
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid rgba(180, 210, 255, 0.15);
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(22, 31, 58, 0.95);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #cae7ff;
+      font-weight: 800;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td input,
+    td textarea,
+    td select {
+      min-width: 160px;
+      border-radius: 10px;
+      padding: 9px 10px;
+      min-height: 42px;
+    }
+
+    td textarea {
+      min-height: 42px;
+    }
+
+    .btn {
+      border: 1px solid rgba(200, 220, 255, 0.25);
+      background: rgba(255, 255, 255, 0.06);
+      color: #eaf2ff;
+      border-radius: 11px;
+      padding: 9px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(124, 232, 248, 0.6);
+      background: rgba(124, 232, 248, 0.14);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, rgba(124, 232, 248, 0.95), rgba(148, 183, 255, 0.95));
+      color: #081122;
+      border-color: transparent;
+    }
+
+    .btn-danger {
+      color: #ffd9e1;
+      border-color: rgba(255, 159, 179, 0.35);
+      background: rgba(255, 159, 179, 0.1);
+      padding: 8px 10px;
+    }
+
+    .btn-danger:hover {
+      background: rgba(255, 159, 179, 0.18);
+      border-color: rgba(255, 159, 179, 0.6);
+    }
+
+    .actions {
+      position: sticky;
+      bottom: 12px;
+      z-index: 6;
+      background: linear-gradient(120deg, rgba(14, 20, 38, 0.94), rgba(10, 14, 26, 0.9));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .actions .info {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-right: auto;
+      min-width: 220px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(8, 14, 26, 0.95);
+      color: #e9f8ff;
+      border: 1px solid rgba(124, 232, 248, 0.45);
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 250ms ease, transform 250ms ease;
+      z-index: 10;
+      max-width: min(420px, 86vw);
+      font-size: 0.9rem;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .required-note {
+      margin-top: 10px;
+      font-size: 0.83rem;
+      color: #b7cbf2;
+    }
+
+    @media (max-width: 980px) {
+      .cols-2,
+      .cols-3 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        position: relative;
+        top: 0;
+      }
+      .actions {
+        position: relative;
+        bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="brand">
+        <div>
+          <h1 class="title">SnowBrain - Formulaire de Cadrage Projet Logiciel</h1>
+          <p class="subtitle">
+            Ce formulaire collecte les informations nécessaires pour produire un cadrage complet: cahier des charges,
+            architecture, planning, stratégie qualité, gestion des risques et projection budgétaire.
+            Remplissez le plus précisément possible pour réduire les zones d'ombre avant le démarrage.
+          </p>
+        </div>
+        <div class="tagline">SnowBrain Intake v1</div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div id="progressText" class="progress-text">0% complete</div>
+      </div>
+    </header>
+
+    <form id="intakeForm" novalidate>
+      <section class="panel" data-section-title="1. Organisation et contacts">
+        <h2>1) Organisation cliente et points de contact</h2>
+        <p class="lead">Base contractuelle et opérationnelle pour identifier les bons interlocuteurs et éviter les blocages administratifs.</p>
+        <div class="grid cols-2">
+          <label class="field"><span>Nom de l'entreprise *</span><input required name="company_name" data-export-label="Nom de l'entreprise" placeholder="Ex: ACME Industries"></label>
+          <label class="field"><span>Secteur d'activité</span><input name="industry" data-export-label="Secteur d'activité" placeholder="Ex: Fintech, santé, retail"></label>
+          <label class="field"><span>Taille de l'entreprise</span>
+            <select name="company_size" data-export-label="Taille de l'entreprise">
+              <option value="">Selectionner</option>
+              <option>1-10</option>
+              <option>11-50</option>
+              <option>51-250</option>
+              <option>251-1000</option>
+              <option>1000+</option>
+            </select>
+          </label>
+          <label class="field"><span>Site web</span><input name="website" data-export-label="Site web" type="url" placeholder="https://..."></label>
+          <label class="field"><span>Contact principal (nom) *</span><input required name="main_contact_name" data-export-label="Contact principal - nom" placeholder="Precisez: contact principal (nom)"></label>
+          <label class="field"><span>Fonction du contact principal *</span><input required name="main_contact_role" data-export-label="Contact principal - fonction" placeholder="Precisez: fonction du contact principal"></label>
+          <label class="field"><span>Email du contact principal *</span><input required name="main_contact_email" data-export-label="Contact principal - email" type="email" placeholder="nom@entreprise.com"></label>
+          <label class="field"><span>Telephone du contact principal</span><input name="main_contact_phone" data-export-label="Contact principal - telephone" type="tel" placeholder="Ex: +33 6 12 34 56 78"></label>
+          <label class="field"><span>Entite de facturation</span><input name="billing_entity" data-export-label="Entite de facturation" placeholder="Precisez: entite de facturation"></label>
+          <label class="field"><span>Numero TVA / identification fiscale</span><input name="tax_id" data-export-label="Numero fiscal" placeholder="Precisez: numero tva / identification fiscale"></label>
+        </div>
+        <label class="field" style="margin-top:14px"><span>Adresse de facturation</span><textarea name="billing_address" data-export-label="Adresse de facturation" placeholder="Adresse complete, ville, code postal, pays"></textarea></label>
+      </section>
+
+      <section class="panel" data-section-title="2. Vision, objectifs et valeur">
+        <h2>2) Vision du projet et objectifs business</h2>
+        <p class="lead">Comprendre le pourquoi permet de prioriser correctement les exigences et de mesurer la reussite.</p>
+        <div class="grid cols-3">
+          <label class="field"><span>Nom du projet *</span><input required name="project_name" data-export-label="Nom du projet" placeholder="Precisez: nom du projet"></label>
+          <label class="field"><span>Type de solution *</span>
+            <select required name="project_type" data-export-label="Type de solution">
+              <option value="">Selectionner</option>
+              <option>Application web</option>
+              <option>Application mobile</option>
+              <option>Plateforme SaaS</option>
+              <option>API / middleware</option>
+              <option>Data / BI</option>
+              <option>Automatisation interne</option>
+              <option>IA / ML</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label class="field"><span>Maturite actuelle</span>
+            <select name="project_maturity" data-export-label="Maturite du projet">
+              <option value="">Selectionner</option>
+              <option>Idee initiale</option>
+              <option>Pre-cadrage</option>
+              <option>Prototype existant</option>
+              <option>MVP en production</option>
+              <option>Refonte d'un produit existant</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Contexte metier et opportunite *</span><textarea required name="business_context" data-export-label="Contexte metier" placeholder="Situation actuelle, evenement declencheur, enjeu strategique..."></textarea></label>
+          <label class="field"><span>Probleme a resoudre *</span><textarea required name="problem_statement" data-export-label="Probleme a resoudre" placeholder="Qu'est-ce qui ne fonctionne pas aujourd'hui?"></textarea></label>
+          <label class="field"><span>Objectifs mesurables *</span><textarea required name="business_objectives" data-export-label="Objectifs mesurables" placeholder="Ex: reduire le temps de traitement de 30%, augmenter conversion de 15%..."></textarea></label>
+          <label class="field"><span>KPI de succes</span><textarea name="success_kpis" data-export-label="KPI de succes" placeholder="KPI + valeur cible + horizon temporel"></textarea></label>
+          <label class="field"><span>Livrables attendus</span><textarea name="expected_deliverables" data-export-label="Livrables attendus" placeholder="Application, portail admin, API, documentation, formation..."></textarea></label>
+          <label class="field"><span>Hypothese de ROI / valeur attendue</span><textarea name="roi_expectation" data-export-label="Hypothese de ROI" placeholder="Detaillez: hypothese de roi"></textarea></label>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="3. Perimetre et gouvernance">
+        <h2>3) Perimetre, decisionnaires et gouvernance</h2>
+        <p class="lead">Cette partie sert a cadrer ce qui est inclus, exclus, et qui valide quoi pendant l'execution.</p>
+        <div class="grid cols-2">
+          <label class="field"><span>Perimetre IN (inclus) *</span><textarea required name="scope_in" data-export-label="Perimetre inclus" placeholder="Detaillez: perimetre inclus"></textarea></label>
+          <label class="field"><span>Perimetre OUT (exclu)</span><textarea name="scope_out" data-export-label="Perimetre exclu" placeholder="Detaillez: perimetre exclu"></textarea></label>
+          <label class="field"><span>Sponsor executif</span><input name="sponsor_name" data-export-label="Sponsor executif" placeholder="Precisez: sponsor executif"></label>
+          <label class="field"><span>Product owner / referent metier</span><input name="product_owner" data-export-label="Product owner" placeholder="Precisez: product owner / referent metier"></label>
+          <label class="field"><span>Comite de decision (noms/fonctions)</span><textarea name="decision_committee" data-export-label="Comite de decision" placeholder="Detaillez: comite de decision"></textarea></label>
+          <label class="field"><span>Cadence de pilotage</span>
+            <select name="governance_cadence" data-export-label="Cadence de pilotage">
+              <option value="">Selectionner</option>
+              <option>Hebdomadaire</option>
+              <option>Bi-mensuelle</option>
+              <option>Mensuelle</option>
+              <option>Sur jalon uniquement</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="repeater" data-repeater-name="stakeholders">
+          <div class="repeater-head">
+            <strong>Parties prenantes clefs</strong>
+            <button class="btn" type="button" data-action="add-row">+ Ajouter une partie prenante</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Role</th>
+                  <th>Influence</th>
+                  <th>Disponibilite</th>
+                  <th>Responsabilite de validation</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <template>
+            <tr>
+              <td><input data-key="nom" placeholder="Nom prenom"></td>
+              <td><input data-key="role" placeholder="Ex: Direction, metier, IT"></td>
+              <td>
+                <select data-key="influence">
+                  <option value="">--</option>
+                  <option>Faible</option>
+                  <option>Moyenne</option>
+                  <option>Forte</option>
+                </select>
+              </td>
+              <td><input data-key="disponibilite" placeholder="Ex: 2h/semaine"></td>
+              <td><input data-key="validation" placeholder="Ce que cette personne valide"></td>
+              <td><button type="button" class="btn btn-danger" data-action="remove-row">Retirer</button></td>
+            </tr>
+          </template>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="4. Utilisateurs, processus et diagrammes">
+        <h2>4) Utilisateurs cibles et processus metiers</h2>
+        <p class="lead">Utilise pour produire les use cases, diagrammes BPMN/UML et la cartographie des flux de valeur.</p>
+        <div class="grid cols-2">
+          <label class="field"><span>Profils utilisateurs cibles *</span><textarea required name="target_users" data-export-label="Profils utilisateurs" placeholder="Detaillez: profils utilisateurs"></textarea></label>
+          <label class="field"><span>Volumes d'usage attendus</span><textarea name="usage_volume" data-export-label="Volumes d'usage" placeholder="Nb utilisateurs, pics d'activite, saisonnalite..."></textarea></label>
+          <label class="field"><span>Parcours critiques a couvrir *</span><textarea required name="critical_journeys" data-export-label="Parcours critiques" placeholder="Detaillez: parcours critiques"></textarea></label>
+          <label class="field"><span>Pain points actuels</span><textarea name="current_pain_points" data-export-label="Pain points actuels" placeholder="Detaillez: pain points actuels"></textarea></label>
+          <label class="field"><span>Processus actuel (AS-IS)</span><textarea name="process_current" data-export-label="Processus actuel" placeholder="Detaillez: processus actuel"></textarea></label>
+          <label class="field"><span>Processus cible (TO-BE)</span><textarea name="process_target" data-export-label="Processus cible" placeholder="Detaillez: processus cible"></textarea></label>
+        </div>
+        <div style="margin-top:12px">
+          <strong style="font-size:.9rem;color:#dcecff">Diagrammes souhaites</strong>
+          <div class="checkbox-row">
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="Use Case" data-export-label="Diagrammes souhaites">Use Case</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="BPMN" data-export-label="Diagrammes souhaites">BPMN</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="Sequence" data-export-label="Diagrammes souhaites">Sequence</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="Classes UML" data-export-label="Diagrammes souhaites">Classes UML</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="ERD" data-export-label="Diagrammes souhaites">ERD / Modele donnees</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="Architecture" data-export-label="Diagrammes souhaites">Architecture technique</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="Deploiement" data-export-label="Diagrammes souhaites">Deploiement</label>
+            <label class="chip"><input type="checkbox" name="diagram_needs" value="Wireframes" data-export-label="Diagrammes souhaites">Wireframes UX</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="5. Exigences fonctionnelles">
+        <h2>5) Exigences fonctionnelles detaillees</h2>
+        <p class="lead">Ces informations servent a construire un backlog priorise, les user stories et les criteres d'acceptation.</p>
+
+        <div class="repeater" data-repeater-name="functional">
+          <div class="repeater-head">
+            <strong>Backlog initial (epiques / exigences)</strong>
+            <button class="btn" type="button" data-action="add-row">+ Ajouter une exigence</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Domaine / Module</th>
+                  <th>Description de l'exigence</th>
+                  <th>Priorite</th>
+                  <th>Critere(s) d'acceptation</th>
+                  <th>Complexite percue</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <template>
+            <tr>
+              <td><input data-key="domaine" placeholder="Ex: Auth, facturation, reporting"></td>
+              <td><textarea data-key="exigence" placeholder="Enonce clair et testable"></textarea></td>
+              <td>
+                <select data-key="priorite">
+                  <option value="">--</option>
+                  <option>Must</option>
+                  <option>Should</option>
+                  <option>Could</option>
+                  <option>Won't (phase suivante)</option>
+                </select>
+              </td>
+              <td><textarea data-key="acceptance" placeholder="Given / When / Then ou regles de validation"></textarea></td>
+              <td>
+                <select data-key="complexite">
+                  <option value="">--</option>
+                  <option>Faible</option>
+                  <option>Moyenne</option>
+                  <option>Forte</option>
+                </select>
+              </td>
+              <td><button type="button" class="btn btn-danger" data-action="remove-row">Retirer</button></td>
+            </tr>
+          </template>
+        </div>
+
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Regles metiers transverses</span><textarea name="business_rules" data-export-label="Regles metiers" placeholder="Detaillez: regles metiers"></textarea></label>
+          <label class="field"><span>Conditions globales d'acceptation</span><textarea name="global_acceptance" data-export-label="Conditions globales d'acceptation" placeholder="Detaillez: conditions globales d'acceptation"></textarea></label>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="6. Donnees, integrations et migration">
+        <h2>6) Donnees, integrations et migration</h2>
+        <p class="lead">Necessaire pour elaborer les schemas de donnees, l'architecture d'integration et la strategie de reprise.</p>
+        <div class="grid cols-2">
+          <label class="field"><span>Entites de donnees principales</span><textarea name="main_entities" data-export-label="Entites de donnees" placeholder="Detaillez: entites de donnees"></textarea></label>
+          <label class="field"><span>Volume de donnees estime</span><textarea name="data_volume" data-export-label="Volume de donnees" placeholder="Detaillez: volume de donnees"></textarea></label>
+          <label class="field"><span>Duree de retention des donnees</span><input name="data_retention" data-export-label="Retention des donnees" placeholder="Ex: 5 ans"></label>
+          <label class="field"><span>Contraintes sur la qualite des donnees</span><textarea name="data_quality_constraints" data-export-label="Contraintes qualite donnees" placeholder="Detaillez: contraintes qualite donnees"></textarea></label>
+        </div>
+
+        <div class="repeater" data-repeater-name="integrations">
+          <div class="repeater-head">
+            <strong>Systemes a integrer</strong>
+            <button class="btn" type="button" data-action="add-row">+ Ajouter une integration</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Systeme / Outil</th>
+                  <th>Objectif de l'integration</th>
+                  <th>Type d'echange</th>
+                  <th>Frequence</th>
+                  <th>Securite / auth</th>
+                  <th>Owner cote client</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <template>
+            <tr>
+              <td><input data-key="systeme" placeholder="ERP, CRM, SSO..."></td>
+              <td><input data-key="objectif" placeholder="Pourquoi cette integration"></td>
+              <td><input data-key="type" placeholder="API REST, SFTP, DB, webhook..."></td>
+              <td><input data-key="frequence" placeholder="Temps reel, horaire, quotidien..."></td>
+              <td><input data-key="securite" placeholder="OAuth2, token, VPN..."></td>
+              <td><input data-key="owner" placeholder="Equipe responsable"></td>
+              <td><button type="button" class="btn btn-danger" data-action="remove-row">Retirer</button></td>
+            </tr>
+          </template>
+        </div>
+
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Migration de donnees necessaire ?</span>
+            <select name="migration_needed" data-export-label="Migration de donnees necessaire">
+              <option value="">Selectionner</option>
+              <option>Oui</option>
+              <option>Non</option>
+              <option>A confirmer</option>
+            </select>
+          </label>
+          <label class="field"><span>Details de migration / reprise historique</span><textarea name="migration_details" data-export-label="Details migration" placeholder="Detaillez: details migration"></textarea></label>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="7. Exigences non fonctionnelles">
+        <h2>7) Exigences non fonctionnelles et contraintes techniques</h2>
+        <p class="lead">Ces informations alimentent l'architecture cible, les SLA, le plan de securite et les tests de performance.</p>
+        <div class="grid cols-3">
+          <label class="field"><span>Utilisateurs concurrents cibles</span><input name="nfr_concurrent_users" type="number" min="0" data-export-label="Utilisateurs concurrents" placeholder="Ex: 100"></label>
+          <label class="field"><span>Transactions / minute (pic)</span><input name="nfr_peak_tpm" type="number" min="0" data-export-label="Transactions pic" placeholder="Ex: 100"></label>
+          <label class="field"><span>Temps de reponse max (ms)</span><input name="nfr_max_response" type="number" min="0" data-export-label="Temps de reponse max" placeholder="Ex: 1200"></label>
+          <label class="field"><span>Disponibilite cible (%)</span><input name="nfr_uptime" type="number" min="0" max="100" step="0.01" data-export-label="Disponibilite cible" placeholder="Ex: 99.9"></label>
+          <label class="field"><span>RTO cible</span><input name="nfr_rto" data-export-label="RTO" placeholder="Precisez: rto cible"></label>
+          <label class="field"><span>RPO cible</span><input name="nfr_rpo" data-export-label="RPO" placeholder="Precisez: rpo cible"></label>
+        </div>
+
+        <div style="margin-top:14px">
+          <strong style="font-size:.9rem;color:#dcecff">Exigences securite</strong>
+          <div class="checkbox-row">
+            <label class="chip"><input type="checkbox" name="security_needs" value="MFA" data-export-label="Exigences securite">MFA</label>
+            <label class="chip"><input type="checkbox" name="security_needs" value="SSO" data-export-label="Exigences securite">SSO</label>
+            <label class="chip"><input type="checkbox" name="security_needs" value="RBAC" data-export-label="Exigences securite">RBAC</label>
+            <label class="chip"><input type="checkbox" name="security_needs" value="Chiffrement transit/repos" data-export-label="Exigences securite">Chiffrement transit + repos</label>
+            <label class="chip"><input type="checkbox" name="security_needs" value="Audit logs" data-export-label="Exigences securite">Audit logs</label>
+            <label class="chip"><input type="checkbox" name="security_needs" value="Tests pentest" data-export-label="Exigences securite">Pentest</label>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <strong style="font-size:.9rem;color:#dcecff">Conformite / reglementaire</strong>
+          <div class="checkbox-row">
+            <label class="chip"><input type="checkbox" name="compliance_needs" value="RGPD" data-export-label="Conformite">RGPD</label>
+            <label class="chip"><input type="checkbox" name="compliance_needs" value="ISO 27001" data-export-label="Conformite">ISO 27001</label>
+            <label class="chip"><input type="checkbox" name="compliance_needs" value="PCI DSS" data-export-label="Conformite">PCI DSS</label>
+            <label class="chip"><input type="checkbox" name="compliance_needs" value="HIPAA" data-export-label="Conformite">HIPAA</label>
+            <label class="chip"><input type="checkbox" name="compliance_needs" value="Autre" data-export-label="Conformite">Autre</label>
+          </div>
+        </div>
+
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Niveau d'accessibilite cible</span>
+            <select name="accessibility_target" data-export-label="Accessibilite cible">
+              <option value="">Selectionner</option>
+              <option>Aucun niveau impose</option>
+              <option>WCAG A</option>
+              <option>WCAG AA</option>
+              <option>WCAG AAA</option>
+            </select>
+          </label>
+          <label class="field"><span>Preference d'hebergement</span>
+            <select name="hosting_preference" data-export-label="Preference d'hebergement">
+              <option value="">Selectionner</option>
+              <option>Cloud public</option>
+              <option>Cloud prive</option>
+              <option>On-premise</option>
+              <option>Hybride</option>
+              <option>A definir</option>
+            </select>
+          </label>
+          <label class="field"><span>Contraintes technologiques imposees</span><textarea name="tech_constraints" data-export-label="Contraintes technologiques" placeholder="Detaillez: contraintes technologiques"></textarea></label>
+          <label class="field"><span>Pref. stack / standards internes</span><textarea name="tech_preferences" data-export-label="Preferences stack" placeholder="Detaillez: preferences stack"></textarea></label>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="8. Planning, livraison et exploitation">
+        <h2>8) Planning, livraison, tests et exploitation</h2>
+        <p class="lead">Pour preparer macro-planning, plan de release, plan de test, runbook et dispositifs de support.</p>
+        <div class="grid cols-3">
+          <label class="field"><span>Date de demarrage souhaitee</span><input name="start_date" type="date" data-export-label="Date de demarrage souhaitee" placeholder="Format AAAA-MM-JJ"></label>
+          <label class="field"><span>Date cible de mise en production *</span><input required name="go_live_date" type="date" data-export-label="Date cible go-live" placeholder="Format AAAA-MM-JJ"></label>
+          <label class="field"><span>Souplesse sur le delai</span>
+            <select name="timeline_flexibility" data-export-label="Souplesse sur delai">
+              <option value="">Selectionner</option>
+              <option>Faible (date fixe)</option>
+              <option>Moyenne</option>
+              <option>Elevee</option>
+            </select>
+          </label>
+          <label class="field"><span>Methodologie preferee</span>
+            <select name="delivery_method" data-export-label="Methodologie preferee">
+              <option value="">Selectionner</option>
+              <option>Agile Scrum</option>
+              <option>Kanban</option>
+              <option>Cycle en V</option>
+              <option>Hybride</option>
+            </select>
+          </label>
+          <label class="field"><span>Disponibilite de l'equipe cliente</span>
+            <select name="client_availability" data-export-label="Disponibilite equipe cliente">
+              <option value="">Selectionner</option>
+              <option>Faible</option>
+              <option>Moyenne</option>
+              <option>Elevee</option>
+            </select>
+          </label>
+          <label class="field"><span>Dependances exterieures majeures</span><input name="major_dependencies" data-export-label="Dependances majeures" placeholder="Precisez: dependances exterieures majeures"></label>
+        </div>
+
+        <div class="repeater" data-repeater-name="milestones">
+          <div class="repeater-head">
+            <strong>Jalons projet</strong>
+            <button class="btn" type="button" data-action="add-row">+ Ajouter un jalon</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Jalon</th>
+                  <th>Objectif</th>
+                  <th>Date cible</th>
+                  <th>Responsable</th>
+                  <th>Critere de validation</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <template>
+            <tr>
+              <td><input data-key="jalon" placeholder="Ex: Cadrage, MVP, beta, go-live"></td>
+              <td><input data-key="objectif" placeholder="Resultat attendu"></td>
+              <td><input data-key="date" type="date" placeholder="Format AAAA-MM-JJ"></td>
+              <td><input data-key="responsable" placeholder="Role/personne"></td>
+              <td><input data-key="validation" placeholder="Comment valider"></td>
+              <td><button type="button" class="btn btn-danger" data-action="remove-row">Retirer</button></td>
+            </tr>
+          </template>
+        </div>
+
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Strategie de test / recette</span><textarea name="testing_strategy" data-export-label="Strategie de test" placeholder="Detaillez: strategie de test"></textarea></label>
+          <label class="field"><span>Strategie de deploiement / rollback</span><textarea name="deployment_strategy" data-export-label="Strategie de deploiement" placeholder="Detaillez: strategie de deploiement"></textarea></label>
+          <label class="field"><span>Attentes support post go-live</span><textarea name="support_expectations" data-export-label="Attentes support" placeholder="Detaillez: attentes support"></textarea></label>
+          <label class="field"><span>Besoins de formation</span><textarea name="training_needs" data-export-label="Besoins de formation" placeholder="Detaillez: besoins de formation"></textarea></label>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="9. Budget et contractualisation">
+        <h2>9) Budget, modele economique et contractualisation</h2>
+        <p class="lead">Pour aligner le cadrage technique avec la realite financiere, les achats et les contraintes juridiques.</p>
+        <div class="grid cols-3">
+          <label class="field"><span>Budget minimum *</span><input required name="budget_min" type="number" min="0" data-export-label="Budget minimum" placeholder="Ex: 50000"></label>
+          <label class="field"><span>Budget maximum *</span><input required name="budget_max" type="number" min="0" data-export-label="Budget maximum" placeholder="Ex: 50000"></label>
+          <label class="field"><span>Devise *</span>
+            <select required name="currency" data-export-label="Devise">
+              <option value="">Selectionner</option>
+              <option>EUR</option>
+              <option>USD</option>
+              <option>CAD</option>
+              <option>GBP</option>
+              <option>CHF</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label class="field"><span>Nature budgetaire</span>
+            <select name="budget_nature" data-export-label="Nature budgetaire">
+              <option value="">Selectionner</option>
+              <option>CAPEX</option>
+              <option>OPEX</option>
+              <option>Mixte</option>
+            </select>
+          </label>
+          <label class="field"><span>Mode de facturation prefere</span>
+            <select name="pricing_model" data-export-label="Mode de facturation">
+              <option value="">Selectionner</option>
+              <option>Forfait</option>
+              <option>Regie (T&M)</option>
+              <option>Hybride</option>
+            </select>
+          </label>
+          <label class="field"><span>Echeance de paiement standard (jours)</span><input name="payment_deadline_days" type="number" min="0" data-export-label="Echeance paiement (jours)" placeholder="Ex: 30"></label>
+        </div>
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Modalites de paiement (acompte, jalons, solde)</span><textarea name="payment_terms" data-export-label="Modalites de paiement" placeholder="Detaillez: modalites de paiement"></textarea></label>
+          <label class="field"><span>Processus achats / onboarding fournisseur</span><textarea name="procurement_process" data-export-label="Processus achats" placeholder="Detaillez: processus achats"></textarea></label>
+          <label class="field"><span>Contraintes contractuelles (SLA, clauses, assurance)</span><textarea name="contract_constraints" data-export-label="Contraintes contractuelles" placeholder="Detaillez: contraintes contractuelles"></textarea></label>
+          <label class="field"><span>Risques financiers identifies</span><textarea name="financial_risks" data-export-label="Risques financiers" placeholder="Detaillez: risques financiers"></textarea></label>
+          <label class="field"><span>Contact comptable / facturation</span><input name="finance_contact" data-export-label="Contact facturation" placeholder="Precisez: contact comptable / facturation"></label>
+          <label class="field"><span>Date cible de retour sur investissement</span><input name="roi_target_date" type="date" data-export-label="Date cible ROI" placeholder="Format AAAA-MM-JJ"></label>
+        </div>
+      </section>
+
+      <section class="panel" data-section-title="10. Risques, validation finale et documents">
+        <h2>10) Risques, hypotheses, validation finale</h2>
+        <p class="lead">Derniere section pour consolider la matrice de risques, les hypotheses de cadrage et la validation officielle cote client.</p>
+
+        <div class="repeater" data-repeater-name="risks">
+          <div class="repeater-head">
+            <strong>Matrice de risques initiale</strong>
+            <button class="btn" type="button" data-action="add-row">+ Ajouter un risque</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Risque</th>
+                  <th>Probabilite</th>
+                  <th>Impact</th>
+                  <th>Plan de mitigation</th>
+                  <th>Proprietaire risque</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <template>
+            <tr>
+              <td><input data-key="risque" placeholder="Description du risque"></td>
+              <td>
+                <select data-key="probabilite">
+                  <option value="">--</option>
+                  <option>Faible</option>
+                  <option>Moyenne</option>
+                  <option>Elevee</option>
+                </select>
+              </td>
+              <td>
+                <select data-key="impact">
+                  <option value="">--</option>
+                  <option>Faible</option>
+                  <option>Moyen</option>
+                  <option>Eleve</option>
+                  <option>Critique</option>
+                </select>
+              </td>
+              <td><input data-key="mitigation" placeholder="Action preventive/corrective"></td>
+              <td><input data-key="owner" placeholder="Role/personne"></td>
+              <td><button type="button" class="btn btn-danger" data-action="remove-row">Retirer</button></td>
+            </tr>
+          </template>
+        </div>
+
+        <div class="grid cols-2" style="margin-top:14px">
+          <label class="field"><span>Hypotheses structurantes</span><textarea name="key_assumptions" data-export-label="Hypotheses structurantes" placeholder="Detaillez: hypotheses structurantes"></textarea></label>
+          <label class="field"><span>Points bloquants connus</span><textarea name="known_blockers" data-export-label="Points bloquants connus" placeholder="Detaillez: points bloquants connus"></textarea></label>
+          <label class="field"><span>Gouvernance d'acceptation finale *</span><textarea required name="final_acceptance_governance" data-export-label="Gouvernance d'acceptation finale" placeholder="Detaillez: gouvernance d'acceptation finale"></textarea></label>
+          <label class="field"><span>Liens vers documents existants (drive, specs, maquettes...)</span><textarea name="existing_docs_links" data-export-label="Liens documents existants" placeholder="Detaillez: liens documents existants"></textarea></label>
+        </div>
+
+        <div style="margin-top:12px">
+          <strong style="font-size:.9rem;color:#dcecff">Documents attendus en sortie SnowBrain</strong>
+          <div class="checkbox-row">
+            <label class="chip"><input type="checkbox" name="expected_docs" value="Cahier des charges" data-export-label="Documents attendus">Cahier des charges</label>
+            <label class="chip"><input type="checkbox" name="expected_docs" value="Dossier architecture" data-export-label="Documents attendus">Dossier architecture</label>
+            <label class="chip"><input type="checkbox" name="expected_docs" value="Backlog priorise" data-export-label="Documents attendus">Backlog priorise</label>
+            <label class="chip"><input type="checkbox" name="expected_docs" value="Plan de test / recette" data-export-label="Documents attendus">Plan de test</label>
+            <label class="chip"><input type="checkbox" name="expected_docs" value="Plan de securite" data-export-label="Documents attendus">Plan de securite</label>
+            <label class="chip"><input type="checkbox" name="expected_docs" value="Runbook exploitation" data-export-label="Documents attendus">Runbook</label>
+          </div>
+        </div>
+
+        <div class="grid cols-3" style="margin-top:14px">
+          <label class="field"><span>Nom du valideur client *</span><input required name="sign_name" data-export-label="Valideur client - nom" placeholder="Precisez: nom du valideur client"></label>
+          <label class="field"><span>Fonction du valideur</span><input name="sign_role" data-export-label="Valideur client - fonction" placeholder="Precisez: fonction du valideur"></label>
+          <label class="field"><span>Date de validation *</span><input required name="sign_date" type="date" data-export-label="Date validation" placeholder="Format AAAA-MM-JJ"></label>
+        </div>
+        <div class="checkbox-row" style="margin-top:12px">
+          <label class="chip"><input required type="checkbox" name="consent" value="Oui" data-export-label="Validation finale">Je confirme que les informations fournies sont exactes et exploitables pour le cadrage SnowBrain.</label>
+        </div>
+        <p class="required-note">* Champs essentiels pour lancer le cadrage sans aller-retour supplementaire.</p>
+      </section>
+
+      <div class="actions">
+        <div class="info">Astuce: le brouillon est sauvegarde automatiquement dans votre navigateur.</div>
+        <button type="button" class="btn" id="saveBtn">Sauvegarder brouillon</button>
+        <button type="button" class="btn btn-primary" id="exportXlsxBtn">Exporter Excel (.xlsx)</button>
+        <button type="button" class="btn" id="exportCsvBtn">Exporter CSV (compatible Excel)</button>
+        <button type="button" class="btn btn-danger" id="clearBtn">Vider le formulaire</button>
+      </div>
+    </form>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/vendor/xlsx.full.min.js"></script>
+  <script>
+    (() => {
+      const form = document.getElementById("intakeForm");
+      const progressFill = document.getElementById("progressFill");
+      const progressText = document.getElementById("progressText");
+      const toast = document.getElementById("toast");
+      const storageKey = "snowbrain-intake-v1";
+
+      const repeaterConfigs = {
+        stakeholders: {
+          section: "Parties prenantes",
+          sheet: "Stakeholders",
+          columns: {
+            nom: "Nom",
+            role: "Role",
+            influence: "Influence",
+            disponibilite: "Disponibilite",
+            validation: "Validation"
+          }
+        },
+        functional: {
+          section: "Exigences fonctionnelles",
+          sheet: "Fonctionnel",
+          columns: {
+            domaine: "Domaine",
+            exigence: "Exigence",
+            priorite: "Priorite",
+            acceptance: "Acceptation",
+            complexite: "Complexite"
+          }
+        },
+        integrations: {
+          section: "Integrations",
+          sheet: "Integrations",
+          columns: {
+            systeme: "Systeme",
+            objectif: "Objectif",
+            type: "Type",
+            frequence: "Frequence",
+            securite: "Securite",
+            owner: "Owner client"
+          }
+        },
+        milestones: {
+          section: "Jalons",
+          sheet: "Jalons",
+          columns: {
+            jalon: "Jalon",
+            objectif: "Objectif",
+            date: "Date",
+            responsable: "Responsable",
+            validation: "Validation"
+          }
+        },
+        risks: {
+          section: "Risques",
+          sheet: "Risques",
+          columns: {
+            risque: "Risque",
+            probabilite: "Probabilite",
+            impact: "Impact",
+            mitigation: "Mitigation",
+            owner: "Owner"
+          }
+        }
+      };
+
+      function notify(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(notify.timer);
+        notify.timer = setTimeout(() => toast.classList.remove("show"), 2200);
+      }
+
+      function escapeSelector(value) {
+        return String(value).replace(/["\\]/g, "\\$&");
+      }
+
+      function getFieldNames() {
+        const all = Array.from(form.querySelectorAll("[name]"));
+        return Array.from(new Set(all.map((el) => el.name)));
+      }
+
+      function readFieldValue(name) {
+        const group = Array.from(form.querySelectorAll(`[name="${escapeSelector(name)}"]`));
+        if (!group.length) return "";
+        const first = group[0];
+        if (first.type === "checkbox") {
+          return group.filter((el) => el.checked).map((el) => el.value);
+        }
+        if (first.type === "radio") {
+          return group.find((el) => el.checked)?.value || "";
+        }
+        return first.value || "";
+      }
+
+      function writeFieldValue(name, value) {
+        const group = Array.from(form.querySelectorAll(`[name="${escapeSelector(name)}"]`));
+        if (!group.length) return;
+        const first = group[0];
+        if (first.type === "checkbox") {
+          const values = Array.isArray(value) ? value : [];
+          group.forEach((el) => {
+            el.checked = values.includes(el.value);
+          });
+          return;
+        }
+        if (first.type === "radio") {
+          group.forEach((el) => {
+            el.checked = el.value === value;
+          });
+          return;
+        }
+        first.value = value || "";
+      }
+
+      function getRepeaterByName(name) {
+        return form.querySelector(`.repeater[data-repeater-name="${name}"]`);
+      }
+
+      function addRepeaterRow(repeater, data = {}) {
+        const template = repeater.querySelector("template");
+        const tbody = repeater.querySelector("tbody");
+        const row = template.content.firstElementChild.cloneNode(true);
+        row.querySelectorAll("[data-key]").forEach((field) => {
+          const key = field.dataset.key;
+          field.value = data[key] || "";
+        });
+        tbody.appendChild(row);
+      }
+
+      function collectRepeaterRows(name) {
+        const repeater = getRepeaterByName(name);
+        if (!repeater) return [];
+        const rows = [];
+        repeater.querySelectorAll("tbody tr").forEach((row) => {
+          const item = {};
+          let hasAnyValue = false;
+          row.querySelectorAll("[data-key]").forEach((field) => {
+            const key = field.dataset.key;
+            const value = (field.value || "").trim();
+            item[key] = value;
+            if (value) hasAnyValue = true;
+          });
+          if (hasAnyValue) rows.push(item);
+        });
+        return rows;
+      }
+
+      function setRepeaterRows(name, dataRows) {
+        const repeater = getRepeaterByName(name);
+        if (!repeater) return;
+        const tbody = repeater.querySelector("tbody");
+        tbody.innerHTML = "";
+        if (Array.isArray(dataRows) && dataRows.length) {
+          dataRows.forEach((row) => addRepeaterRow(repeater, row));
+        } else {
+          addRepeaterRow(repeater);
+        }
+      }
+
+      function initRepeaters() {
+        form.querySelectorAll(".repeater").forEach((repeater) => {
+          const addButton = repeater.querySelector('[data-action="add-row"]');
+          const tbody = repeater.querySelector("tbody");
+          addButton.addEventListener("click", () => {
+            addRepeaterRow(repeater);
+            saveDraft(false);
+          });
+          tbody.addEventListener("click", (event) => {
+            const removeButton = event.target.closest('[data-action="remove-row"]');
+            if (!removeButton) return;
+            const row = removeButton.closest("tr");
+            if (!row) return;
+            if (tbody.querySelectorAll("tr").length === 1) {
+              row.querySelectorAll("[data-key]").forEach((field) => {
+                field.value = "";
+              });
+            } else {
+              row.remove();
+            }
+            saveDraft(false);
+            updateProgress();
+          });
+          addRepeaterRow(repeater);
+        });
+      }
+
+      function updateProgress() {
+        const requiredControls = Array.from(form.querySelectorAll("[required]"));
+        const visited = new Set();
+        let total = 0;
+        let done = 0;
+
+        requiredControls.forEach((field) => {
+          const key = (field.type === "checkbox" || field.type === "radio")
+            ? `${field.type}:${field.name}`
+            : `field:${field.name || field.id}`;
+          if (visited.has(key)) return;
+          visited.add(key);
+          total += 1;
+
+          if (field.type === "checkbox") {
+            const checked = Array.from(form.querySelectorAll(`[name="${escapeSelector(field.name)}"]`)).some((el) => el.checked);
+            if (checked) done += 1;
+            return;
+          }
+
+          if (field.type === "radio") {
+            const selected = Array.from(form.querySelectorAll(`[name="${escapeSelector(field.name)}"]`)).some((el) => el.checked);
+            if (selected) done += 1;
+            return;
+          }
+
+          if ((field.value || "").trim()) done += 1;
+        });
+
+        const percent = total ? Math.round((done / total) * 100) : 0;
+        progressFill.style.width = `${percent}%`;
+        progressText.textContent = `${percent}% complete (${done}/${total})`;
+      }
+
+      function collectSummaryRows() {
+        const rows = [];
+        const seen = new Set();
+        const fields = Array.from(form.querySelectorAll("[data-export-label][name]"));
+
+        fields.forEach((field) => {
+          const name = field.name;
+          if (seen.has(name)) return;
+          seen.add(name);
+          const label = field.dataset.exportLabel || name;
+          const section = field.closest("section")?.dataset.sectionTitle || "General";
+          const value = readFieldValue(name);
+          const printable = Array.isArray(value) ? value.join(" | ") : String(value || "");
+          rows.push({
+            Section: section,
+            Champ: label,
+            Valeur: printable
+          });
+        });
+
+        rows.unshift({
+          Section: "Meta",
+          Champ: "Export genere le",
+          Valeur: new Date().toISOString()
+        });
+        return rows;
+      }
+
+      function buildState() {
+        const state = {
+          fields: {},
+          repeaters: {}
+        };
+        getFieldNames().forEach((name) => {
+          state.fields[name] = readFieldValue(name);
+        });
+        Object.keys(repeaterConfigs).forEach((name) => {
+          state.repeaters[name] = collectRepeaterRows(name);
+        });
+        return state;
+      }
+
+      function saveDraft(showMessage = true) {
+        const state = buildState();
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        if (showMessage) notify("Brouillon enregistre localement.");
+      }
+
+      function restoreDraft() {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+        try {
+          const state = JSON.parse(raw);
+          if (state.fields && typeof state.fields === "object") {
+            Object.entries(state.fields).forEach(([name, value]) => writeFieldValue(name, value));
+          }
+          if (state.repeaters && typeof state.repeaters === "object") {
+            Object.entries(repeaterConfigs).forEach(([name]) => {
+              setRepeaterRows(name, state.repeaters[name]);
+            });
+          }
+          notify("Brouillon restaure.");
+        } catch (error) {
+          notify("Brouillon invalide ignore.");
+        }
+      }
+
+      function downloadBlob(content, fileName, mimeType) {
+        const blob = new Blob([content], { type: mimeType });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(link.href);
+      }
+
+      function toCsv(rows) {
+        const escaped = rows.map((line) =>
+          line
+            .map((cell) => `"${String(cell ?? "").replace(/"/g, '""')}"`)
+            .join(",")
+        );
+        return "\uFEFF" + escaped.join("\n");
+      }
+
+      function exportCsv() {
+        const lines = [["Section", "Champ", "Valeur"]];
+        collectSummaryRows().forEach((row) => {
+          lines.push([row.Section, row.Champ, row.Valeur]);
+        });
+
+        Object.entries(repeaterConfigs).forEach(([name, config]) => {
+          const rows = collectRepeaterRows(name);
+          rows.forEach((row, index) => {
+            Object.entries(config.columns).forEach(([key, label]) => {
+              lines.push([config.section, `Ligne ${index + 1} - ${label}`, row[key] || ""]);
+            });
+          });
+        });
+
+        const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+        downloadBlob(toCsv(lines), `snowbrain-intake-${stamp}.csv`, "text/csv;charset=utf-8;");
+        notify("Export CSV genere.");
+      }
+
+      function exportXlsx() {
+        if (!window.XLSX) {
+          notify("Bibliotheque XLSX indisponible. Export CSV lance.");
+          exportCsv();
+          return;
+        }
+
+        const workbook = XLSX.utils.book_new();
+        const summarySheet = XLSX.utils.json_to_sheet(collectSummaryRows());
+        XLSX.utils.book_append_sheet(workbook, summarySheet, "Resume");
+
+        Object.entries(repeaterConfigs).forEach(([name, config]) => {
+          const rows = collectRepeaterRows(name).map((row, index) => {
+            const mapped = { Ligne: index + 1 };
+            Object.entries(config.columns).forEach(([key, label]) => {
+              mapped[label] = row[key] || "";
+            });
+            return mapped;
+          });
+          const sheetData = rows.length ? rows : [{ Information: "Aucune donnee saisie" }];
+          XLSX.utils.book_append_sheet(workbook, XLSX.utils.json_to_sheet(sheetData), config.sheet);
+        });
+
+        const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+        XLSX.writeFile(workbook, `snowbrain-intake-${stamp}.xlsx`);
+        notify("Export Excel genere.");
+      }
+
+      function clearForm() {
+        const confirmed = window.confirm("Confirmer la suppression des informations saisies?");
+        if (!confirmed) return;
+        form.reset();
+        Object.keys(repeaterConfigs).forEach((name) => setRepeaterRows(name, []));
+        localStorage.removeItem(storageKey);
+        updateProgress();
+        notify("Formulaire reinitialise.");
+      }
+
+      initRepeaters();
+      restoreDraft();
+      updateProgress();
+
+      form.addEventListener("input", () => {
+        updateProgress();
+        saveDraft(false);
+      });
+
+      form.addEventListener("change", () => {
+        updateProgress();
+        saveDraft(false);
+      });
+
+      document.getElementById("saveBtn").addEventListener("click", () => saveDraft(true));
+      document.getElementById("exportCsvBtn").addEventListener("click", exportCsv);
+      document.getElementById("exportXlsxBtn").addEventListener("click", exportXlsx);
+      document.getElementById("clearBtn").addEventListener("click", clearForm);
+    })();
+  </script>
+</body>
+</html>
